@@ -11,4 +11,4 @@ jobs:
       with:
         docker_name: owasp/zap2docker-weekly  # Updated to use the correct Docker image
         target: 'https://yourwebsite.com'
-        rules_file_path: '.zap/rules.tsv'  # Ensure this path is correct
+        rules_file_path: '.zap/rules.tsv'  # Ensure this path is correct  
