@@ -24,4 +24,4 @@ jobs:
       # Step 3: Run a simple command on the server to test the connection
       - name: Test SSH connection
         run: |
-          ssh -o StrictHostKeyChecking=no your-username@your-server-ip "echo 'SSH connection successful'"
+          ssh -o StrictHostKeyChecking=azureuser@20.46.255.115 "echo 'SSH connection successful'"
