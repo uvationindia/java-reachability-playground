@@ -1,6 +1,5 @@
 name: Test SSH Deployment
 
-# Trigger the workflow when there is a push to the 'main' branch
 on:
   push:
     branches:
@@ -11,17 +10,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout the code from the repository
       - name: Checkout repository
-        uses: actions/checkout@v4.2.1
+        uses: actions/checkout@v2
 
-      # Step 2: Set up SSH by loading the private key from GitHub Secrets
       - name: Set up SSH
         uses: webfactory/ssh-agent@v0.5.3
         with:
           ssh-private-key: ${{ secrets.SSH_KEY }}
 
-      # Step 3: Run a simple command on the server to test the connection
       - name: Test SSH connection
         run: |
-          ssh -o StrictHostKeyChecking=azureuser@20.46.255.115 "echo 'SSH connection successful'"
+          ssh -o StrictHostKeyChecking=no azureuser@20.46.255.115 "echo 'SSH connection successful'"
