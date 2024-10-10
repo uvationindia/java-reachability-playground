@@ -2,7 +2,7 @@ name: Test SSH Deployment
 
 on:
   push:
-    branches:
+    branches:  
       - master
 
 jobs:
